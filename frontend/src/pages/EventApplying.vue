@@ -1,33 +1,35 @@
 <template>
-    <div>
-        <div v-if=" value.SetingUp == 0 " class=" bg-green-400 w-[500px] rounded mt-28 ml-96 shadow-2xl shadow-black">
-            <div class=" text-center p-3">
-                <p class=" font-semibold text-2xl text-gray-700 p-4">Event Application</p>
+    <div class=" bg-gray-300" id="i1">
+        <div class=" p-5">
+            <div v-if=" value.SetingUp == 0 " class=" bg-green-400 w-[500px] rounded mt-28 ml-96 shadow-2xl shadow-black">
+                <div class=" text-center p-3">
+                    <p class=" font-semibold text-2xl text-gray-800 p-4">Event Application</p>
+                </div>
+                <div class=" rounded bg-pink-400 w-[500px] border-2 border-white">
+                    <div class=" flex flex-row p-3 mt-5">
+                        <p class=" font-semibold text-gray-700 text-lg p-2 ml-20">Name : </p>
+                        <input v-model="value.Name" type="text" class=" rounded text-sm border-0 bg-white p-2">
+                    </div>
+                    <div class=" flex flex-row p-3">
+                        <p class=" font-semibold text-gray-700 text-lg p-2 ml-2">Phone Number : </p>
+                        <input v-model="value.Mobile" type="text" class=" rounded text-sm border-0 bg-white p-2">
+                    </div>
+                    <div class=" items-center justify-center text-center p-4">
+                        <Button variant="solid" class=" rounded font-semibold" @click="Applying()">Apply</Button>
+                    </div>
+                </div>
             </div>
-            <div class=" rounded bg-pink-400 w-[500px] border-2 border-white">
-                <div class=" flex flex-row p-3 mt-5">
-                    <p class=" font-semibold text-gray-600 text-lg p-2 ml-20">Name : </p>
-                    <input v-model="value.Name" type="text" class=" rounded text-sm border-0 bg-white p-2">
+            <div v-else class=" bg-blue-400 w-[500px] rounded mt-28 ml-96 shadow-2xl shadow-black ">
+                <div class=" text-center p-3">
+                    <p class=" font-semibold text-2xl text-black p-4">Thanks for Applying</p>
                 </div>
-                <div class=" flex flex-row p-3">
-                    <p class=" font-semibold text-gray-600 text-lg p-2 ml-2">Phone Number : </p>
-                    <input v-model="value.Mobile" type="text" class=" rounded text-sm border-0 bg-white p-2">
-                </div>
-                <div class=" items-center justify-center text-center p-4">
-                    <Button variant="solid" class=" rounded font-semibold" @click="Applying()">Apply</Button>
-                </div>
-            </div>
-        </div>
-        <div v-else class=" bg-blue-400 w-[500px] rounded mt-28 ml-96 shadow-2xl shadow-black ">
-            <div class=" text-center p-3">
-                <p class=" font-semibold text-2xl text-black p-4">Thanks for Applying</p>
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-import { ref,reactive } from 'vue';
+import { ref,reactive,computed } from 'vue';
 import { createListResource } from 'frappe-ui';
 
 const props = defineProps({
@@ -88,5 +90,9 @@ function Applying(){
 </script>
 
 <style scoped>
+
+#i1{
+    height: 100vh;
+}
 
 </style>

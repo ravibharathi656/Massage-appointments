@@ -17,9 +17,8 @@
  "fields": [
   {
    "fieldname": "name1",
-   "fieldtype": "Link",
-   "label": "Name",
-   "options": "Events"
+   "fieldtype": "Data",
+   "label": "Name"
   },
   {
    "fieldname": "date",
@@ -46,7 +45,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-17 22:08:51.956818",
+ "modified": "2024-02-21 15:49:35.074654",
  "modified_by": "Administrator",
  "module": "Event",
  "name": "EventsTimeing",

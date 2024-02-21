@@ -549,7 +549,7 @@
     "@vue/compiler-dom" "3.2.27"
     "@vue/shared" "3.2.27"
 
-"@vue/devtools-api@^6.0.0-beta.18":
+"@vue/devtools-api@^6.0.0-beta.11", "@vue/devtools-api@^6.0.0-beta.18":
   "integrity" "sha512-FqC4s3pm35qGVeXRGOjTsRzlkJjrBLriDS9YXbflHLsfA9FrcKzIyWnLXoNm+/7930E8rRakXuAc2QkC50swAw=="
   "resolved" "https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.0.0-beta.21.1.tgz"
   "version" "6.0.0-beta.21.1"
@@ -1756,6 +1756,13 @@
     "@vue/runtime-dom" "3.2.27"
     "@vue/server-renderer" "3.2.27"
     "@vue/shared" "3.2.27"
+
+"vuex@^4.1.0":
+  "integrity" "sha512-hmV6UerDrPcgbSy9ORAtNXDr9M4wlNP4pEFKye4ujJF8oqgFFuxDCdOLS3eNoRTtq5O3hoBDh9Doj1bQMYHRbQ=="
+  "resolved" "https://registry.npmjs.org/vuex/-/vuex-4.1.0.tgz"
+  "version" "4.1.0"
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.11"
 
 "w3c-keyname@^2.2.0":
   "integrity" "sha512-f+fciywl1SJEniZHD6H+kUO8gOnwIr7f4ijKA6+ZvJFjeGi1r4PDLl53Ayud9O/rk64RqgoQine0feoeOU0kXg=="

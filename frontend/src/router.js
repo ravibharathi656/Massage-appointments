@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { session } from './data/session'
+import store from './store'
 import { userResource } from '@/data/user'
 
 const routes = [
@@ -25,6 +26,24 @@ const routes = [
     component: () => import('@/pages/EventApplying.vue'),
     props: true
   },
+  {
+    name:'EventCreating',
+    path:'/EventList/Eventname1',
+    component: () => import('@/pages/EventCreate.vue'),
+    props: true
+  },
+  {
+    name:'EventListing',
+    path:'/EventList/EventList',
+    component: () => import('@/pages/EventList.vue'),
+    props: true
+  },
+  {
+    name:'EventShedule',
+    path:'/EventList/EventShedule',
+    component: () => import('@/pages/EventShedule.vue'),
+    props: true
+  },
 ]
 
 let router = createRouter({
@@ -38,6 +57,9 @@ router.beforeEach(async (to, from, next) => {
     await userResource.promise
   } catch (error) {
     isLoggedIn = false
+  }
+  if (to.name === 'EventApplying') {
+    store.dispatch('setEnameValue', to.params.Eventname)
   }
 
   if (to.name === 'Login' && isLoggedIn) {

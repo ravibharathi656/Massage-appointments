@@ -29,8 +29,7 @@
   {
    "fieldname": "name1",
    "fieldtype": "Data",
-   "label": "Name",
-   "unique": 1
+   "label": "Name"
   },
   {
    "fieldname": "date",
@@ -55,7 +54,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-19 15:31:41.972612",
+ "modified": "2024-02-20 17:26:26.100339",
  "modified_by": "Administrator",
  "module": "Event",
  "name": "EventApply",
