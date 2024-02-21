@@ -24,9 +24,9 @@
                             <VDatePicker style="height:200px" v-model="date" mode="date" borderless expanded :disabled-dates="disabledDates" :color="ColorName"  :attributes="attrs" />
                         </div>
                     </div>
-                    <div class=" w-[400px] h-[300px] p-4 text-center ss flex flex-col items-center">
+                    <div class=" w-[400px] h-[300px] p-4 text-center flex flex-col items-center">
                         <p class=" font-bold text-xl ">{{ formattedDate }}</p>
-                        <div class=" overflow-y-scroll p-3 s1" style="scrollbar-width: thin" id="">
+                        <div class=" overflow-y-auto p-3 scroll-smooth" style="scrollbar-width: thin">
                             <div v-for="eventstime in EventTimeing.data" :key="eventstime.name1" >
                                 <div v-if="eventstime.name1 == ecall.name && eventstime.date == formattedDateISO">
                                     <div
@@ -193,12 +193,4 @@ const attrs = ref([
     width: 100vh;
 }
 
-.ss .s1::-webkit-scrollbar{
-    background-color: white !important;
-    width: 50px;
-}
-.s1::-webkit-scrollbar-thumb{
-    background-color: red !important;
-    width: 40px;
-}
 </style>
