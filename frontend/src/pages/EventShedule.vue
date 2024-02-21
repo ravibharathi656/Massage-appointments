@@ -33,9 +33,9 @@
                 </div>
             </div>
         </div>
-        <div v-else class=" bg-white w-[500px] rounded mt-28 ml-96 shadow-2xl shadow-white h-20 ">
-            <div class=" text-center p-3 h-2">
-                <p class=" font-semibold text-2xl text-black p-4">Thanks for Applying</p>
+        <div v-else class="  rounded justify-center items-center text-center bg-white ml-72 mt-40 h-20">
+            <div class=" text-center p-3">
+                <p class=" font-semibold text-2xl text-black p-4">  You Sheduled has registered 😃</p>
             </div>
         </div>
     </div>

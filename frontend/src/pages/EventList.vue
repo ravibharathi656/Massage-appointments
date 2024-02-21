@@ -4,7 +4,7 @@
             <sidebar></sidebar>
         </div>
         <div>
-            <div class="  rounded justify-center items-center text-center bg-white ml-72 mt-40 w-[350px] p-2 overflow-auto">
+            <div class="  rounded justify-center items-center text-center bg-white ml-72 mt-40 w-[350px] p-2 pb-4 overflow-auto">
                 <div class="p-4">
                     <p class="font-bold text-3xl text-black underline">Events List</p>
                 </div>
