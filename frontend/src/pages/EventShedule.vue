@@ -4,13 +4,13 @@
             <sidebar></sidebar>
         </div>
         <div v-if=" value.SetingUp == 0 ">
-            <div class="  rounded justify-center items-center text-center bg-white ml-72 mt-40">
+            <div class="  rounded justify-center items-center text-center bg-white ml-72 mt-20 shadow-2xl shadow-black">
                 <div class=" bg-black">
                     <h1 class=" text-2xl font-bold text-white p-2">Event Shedule</h1>
                 </div>
                 <div class=" flex flex-row text-center items-center justify-center p-4 mt-2">
                     <h1 class=" p-2 font-semibold text-gray-800">Event Name</h1>
-                    <select v-model="value.name" type="text" class=" border-0 rounded bg-gray-300 w-64" required>
+                    <select v-model="value.name" type="text" class=" border-0 rounded bg-gray-300 w-[275px]" required>
                         <option v-for="event of Event.data" :key="event.name1" class="text-gray-800 bg-white hover:bg-gray-200 rounded mt-2">
                             {{ event.name1 }}
                         </option>
@@ -18,24 +18,24 @@
                 </div>
                 <div class=" flex flex-row text-center items-center justify-center p-4">
                     <h1 class=" p-2 font-semibold text-gray-800">Date</h1>
-                    <input v-model="value.date" type="date" class=" border-0 rounded bg-gray-300 w-64" required>
+                    <input v-model="value.date" type="date" class=" border-0 rounded bg-gray-300 w-[275px]" required>
                 </div>
                 <div class=" flex flex-row text-center items-center justify-center p-4">
                     <h1 class=" p-2 font-semibold text-gray-800">Time</h1>
-                    <input type="time" v-model="value.time" class=" border-0 rounded bg-gray-300 w-64" required>
+                    <input type="time" v-model="value.time" class=" border-0 rounded bg-gray-300 w-[275px]" required>
                 </div>
                 <div class=" flex flex-row text-center items-center justify-center p-4">
                     <h1 class=" p-2 font-semibold text-gray-800">Seats</h1>
-                    <input type="number" v-model="value.seats" class=" border-0 rounded bg-gray-300 w-64" required>
+                    <input type="number" v-model="value.seats" class=" border-0 rounded bg-gray-300 w-[275px]" required>
                 </div>
                 <div class=" p-3">
                     <Button variant="solid" @click="Sheduling()">Shedule</Button>
                 </div>
             </div>
         </div>
-        <div v-else class="  rounded justify-center items-center text-center bg-white ml-72 mt-40 h-20">
+        <div v-else class="  rounded justify-center items-center text-center border bg-white ml-72 mt-40 h-20 shadow-2xl shadow-black">
             <div class=" text-center p-3">
-                <p class=" font-semibold text-2xl text-black p-4">  You Sheduled has registered 😃</p>
+                <p class=" font-semibold text-2xl text-black p-4">  You Sheduled has been registered 😃</p>
             </div>
         </div>
     </div>

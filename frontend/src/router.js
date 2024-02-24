@@ -44,6 +44,12 @@ const routes = [
     component: () => import('@/pages/EventShedule.vue'),
     props: true
   },
+  {
+    name:'EventApplied',
+    path:'/EventList/Eventapplied',
+    component: () => import('@/pages/EventApplied.vue'),
+    props: true
+  },
 ]
 
 let router = createRouter({

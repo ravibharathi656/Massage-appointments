@@ -1,58 +1,62 @@
 <template>
-    <div class=" bg-green-300 fixed items-center justify-center w-full h-full" id='i1'>
-        <div class=" w-[800px] bg-white ml-56 rounded h-[550px] mt-7 shadow-sm shadow-white">
+    <div class=" w-full h-full bg-green-300">
+        <div class="  w-[800px] ml-64 h-[635px] bg-white shadow-2xl shadow-black">
             <div v-if="!events.loading && events.doc">
-                <div class=" w-full mt-8 text-center justify-center p-2">
-                    <h1 class=" font-semibold text-[35px]">{{ ecall.name1 }}</h1>
-                </div>
-                <div class=" w-full text-center mt-5">
-                        <div class=" flex flex-row justify-center items-center text-center">
-                            <img src="https://www.svgrepo.com/show/528155/clock-circle.svg" class=" w-6 h-6" alt="">
-                            <p class=" text-gray-600 font-semibold text-lg ml-2"> {{ ecall.duration }} minutes</p>
-                        </div>
-                        <div class=" flex flex-row justify-center items-center text-center">
-                            <img src="https://www.svgrepo.com/show/513450/location-pin.svg" class=" w-6 h-6 mt-3" alt="">
-                            <p class=" text-gray-800 font-semibold mt-4 text-xl ml-2"> {{ ecall.location }}</p>
-                        </div>
-                    <p class=" text-gray-600 font-semibold mt-5 text-lg">Please arrive 10 minutes before the classs start time.</p>
-                </div>
-                <div class=" w-full h-[350px] border-t-[1.5px] border-gray-600 mt-10 flex flex-row">
-                    <div class=" w-[1000px] text-center p-4">
-                        <p class=" font-bold text-xl ">Select a Date & Time</p>
-                        <div class=" mt-2 h-96">
-                            <!-- <VCalendar borderless expanded :disabled-dates="disabledDates" :color="ColorName"  :attributes="attrs"></VCalendar> -->
-                            <VDatePicker style="height:200px" v-model="date" mode="date" borderless expanded :disabled-dates="disabledDates" :color="ColorName"  :attributes="attrs" />
-                        </div>
+                <div class=" item-center justify-center w-[600px] ml-32 ">
+                    <div class=" w-full mt-0 text-center justify-center pt-2">
+                        <h1 class=" font-semibold text-[25px]">{{ ecall.name1 }}</h1>
                     </div>
-                    <div class=" w-[400px] h-[300px] p-4 text-center flex flex-col items-center">
-                        <p class=" font-bold text-xl ">{{ formattedDate }}</p>
-                        <div class=" overflow-y-auto p-3 scroll-smooth" style="scrollbar-width: thin">
-                            <div v-for="eventstime in EventTimeing.data" :key="eventstime.name1" >
-                                <div v-if="eventstime.name1 == ecall.name && eventstime.date == formattedDateISO">
-                                    <div
-                                    v-if="eventstime.seats_filled == eventstime.no_of_seats" 
-                                    class=" w-[200px] p-2 rounded border-gray-600 border-2 mt-5 text-center bg-gray-400"  >
-                                        <p class=" text-lg text-black font-semibold ">{{ etimeing(eventstime.time) }}</p>
-                                        <p class=" text-sm text-black mt-2">{{ eventstime.seats_filled }} / {{ eventstime.no_of_seats }} spots taken</p>
-                                        <p class=" text-2xs text-black mt-2">SORRY! this section slot has bee filled</p>
-                                    </div>
-                                    <div
-                                    v-else  
-                                    :class="(eventstime.no_of_seats-eventstime.seats_filled) > 5 ? ' bg-white w-[200px] p-2 rounded border-[#a3297a] border-2 mt-5 text-center' :  'bg-yellow-400 w-[200px] p-2 rounded border-yellow-600 border-2 mt-5 text-center' " >
-                                        <router-link :to="{name:'EventApplying',params:{Eventname:ecall.name, Date:eventstime.date, Time:eventstime.time,Id:eventstime.name}}" >
-                                            <p 
-                                            :class="(eventstime.no_of_seats-eventstime.seats_filled) > 5 ? ' text-[#a3297a] font-semibold' :  ' text-black font-semibold' ">{{ etimeing(eventstime.time) }}</p>
-                                            <p class=" text-sm text-gray-600 mt-2">{{ eventstime.seats_filled }} / {{ eventstime.no_of_seats }} spots taken</p>
-                                            <div v-if="(eventstime.no_of_seats-eventstime.seats_filled) < 5" class=" mt-3">
-                                                <p class=" text-sm text-red-600">Hurry only {{ eventstime.no_of_seats - eventstime.seats_filled }} left</p>
-                                            </div>
-                                        </router-link>
+                    <div class=" w-full text-center mt-2">
+                            <div class=" flex flex-row justify-center items-center text-center">
+                                <img src="https://www.svgrepo.com/show/528155/clock-circle.svg" class=" w-5 h-5" alt="">
+                                <p class=" text-gray-600 font-semibold text-sm ml-2"> {{ ecall.duration }} minutes</p>
+                            </div>
+                            <div class=" flex flex-row justify-center items-center text-center">
+                                <img src="https://www.svgrepo.com/show/513450/location-pin.svg" class=" w-5 h-5 mt-3" alt="">
+                                <p class=" text-gray-800 font-semibold mt-4 text-md ml-2"> {{ ecall.location }}</p>
+                            </div>
+                        <p class=" text-gray-600 font-semibold mt-2 text-md">Please arrive 10 minutes before the classs start time.</p>
+                    </div>
+                </div>
+                <div class=" justify-center w-[800px] items-center">
+                    <div class="w-[800px] h-[350px] border-t-[1.5px] border-gray-300 mt-3 flex flex-row item-center justify-center">
+                        <div class=" w-[480px] text-center p-4 ">
+                            <p class=" font-semibold text-xl ml-6">Select a Date & Time</p>
+                            <div class=" mt-2 h-96">
+                                <!-- <VCalendar borderless expanded :disabled-dates="disabledDates" :color="ColorName"  :attributes="attrs"></VCalendar> -->
+                                <VDatePicker :style="{ width: '480px'}" v-model="date" mode="date" borderless :disabled-dates="disabledDates" :color="ColorName"  :attributes="attrs" />
+                            </div>
+                        </div>
+                        <div class=" w-[400px] h-[440px] p-4 text-center flex flex-col items-center ">
+                            <p class=" font-semibold text-xl ">{{ formattedDate }}</p>
+                            <div class=" overflow-y-scroll p-3 sb">
+                                <div v-for="eventstime in EventTimeing.data" :key="eventstime.name1" >
+                                    <div v-if="eventstime.name1 == ecall.name && eventstime.date == formattedDateISO">
+                                        <div
+                                        v-if="eventstime.seats_filled == eventstime.no_of_seats" 
+                                        class=" w-[230px] p-2 rounded border-gray-300 border-2 mt-5 text-center bg-white cursor-not-allowed"  >
+                                            <p class=" text-lg text-gray-400 font-semibold pb-2 ">{{ etimeing(eventstime.time) }}</p>
+                                            <!-- <p class=" text-sm text-black mt-2">{{ eventstime.seats_filled }} / {{ eventstime.no_of_seats }} spots taken</p> -->
+                                            <p class=" text-2xs text-gray-400 mt-2">SORRY! this slot is filled</p>
+                                        </div>
+                                        <div
+                                        v-else  
+                                        :class="(eventstime.no_of_seats-eventstime.seats_filled) > 5 ? ' bg-white w-[230px] p-2 rounded border-[#a3297a] border-2 mt-5 text-center' :  'bg-white w-[230px] p-2 rounded border-[#a3297a] border-2 mt-5 text-center' " >
+                                            <router-link :to="{name:'EventApplying',params:{Eventname:ecall.name, Date:eventstime.date, Time:eventstime.time,Id:eventstime.name}}" >
+                                                <p 
+                                                :class="(eventstime.no_of_seats-eventstime.seats_filled) > 5 ? ' text-[#a3297a] font-semibold' :  ' text-[#a3297a] font-semibold' ">{{ etimeing(eventstime.time) }}</p>
+                                                <p class=" text-sm text-gray-600 mt-2">{{ eventstime.seats_filled }} / {{ eventstime.no_of_seats }} spots taken</p>
+                                                <!-- <div v-if="(eventstime.no_of_seats-eventstime.seats_filled) < 5" class=" mt-1">
+                                                    <p class=" text-sm text-red-600">Hurry only {{ eventstime.no_of_seats - eventstime.seats_filled }} left</p>
+                                                </div> -->
+                                            </router-link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>                  
+                    </div>                  
+                </div>
             </div>
         </div>
     </div>
@@ -191,6 +195,19 @@ const attrs = ref([
 .i1{
     height: 100vh;
     width: 100vh;
+}
+
+.sb::-webkit-scrollbar{
+    background-color: white;
+    width: 5px;
+    height: 5px;
+}
+
+.sb::-webkit-scrollbar-thumb{
+    width: 1px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: #e4d5df;
 }
 
 </style>

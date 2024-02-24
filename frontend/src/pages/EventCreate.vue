@@ -4,7 +4,7 @@
             <sidebar></sidebar>
         </div>
         <div v-if=" value.SetingUp == 0 ">
-            <div class="  rounded justify-center items-center text-center bg-white ml-72 mt-40">
+            <div class="  rounded justify-center items-center text-center bg-white ml-72 mt-20 shadow-2xl shadow-black">
                 <div class=" bg-black">
                     <h1 class=" text-2xl font-bold text-white p-2">Event</h1>
                 </div>
@@ -25,14 +25,16 @@
                 </div>
             </div>
         </div>
-        <div v-else class="  rounded justify-center items-center text-center bg-white ml-72 mt-40 h-20">
-            <div class=" text-center p-3">
-                <p class=" font-semibold text-2xl text-black p-4"> 🎉 Thanks for Applying 🎉</p>
+        <div v-else class=" ml-72 mt-40 rounded justify-center items-center text-center bg-white h-20 shadow-2xl shadow-black">
+            <div class="p-3 text-center">
+                <p class="font-semibold text-2xl text-black p-4">🎉 Your event has been created 🎉</p>
             </div>
         </div>
+        
         <!-- <pre>
             {{ value.address}}
         </pre> -->
+        
     </div>
 </template>
 

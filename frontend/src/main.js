@@ -6,6 +6,7 @@ import App from './App.vue'
 import store from './store';
 import VCalendar from 'v-calendar';
 import 'v-calendar/style.css';
+// import 'bootstrap/dist/css/bootstrap.css'
 
 // Use plugin with optional defaults
 
